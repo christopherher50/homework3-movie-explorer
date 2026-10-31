@@ -5,10 +5,10 @@ CPSC 349 Homework 3. A React movie browser styled to match Demo.mov.
 ## Run locally
 
 1. Run `npm install`.
-2. Add your TMDB API key after `VITE_TMDB_API_KEY=` in `.env`. A blank file is already provided locally; on another machine, copy `.env.example` to `.env`.
+2. The homework TMDB key is included in `src/config.js`. No environment setup is needed.
 3. Run `npm run dev` and open the printed address in Chrome.
 
-Restart the dev server after changing `.env`.
+To replace the key, edit `src/config.js`.
 
 ## Features
 
@@ -32,12 +32,12 @@ npm run preview
 ## Publish on GitHub Pages
 
 1. Create a public GitHub repository and upload the contents of this directory (not the parent folder or `node_modules`).
-2. Under repository Settings > Secrets and variables > Actions, add a repository secret named `VITE_TMDB_API_KEY` with your key.
+2. No GitHub secret is required; the app reads the key from `src/config.js`.
 3. Under Settings > Pages, select **GitHub Actions** as the source.
 4. Push to `main`, or run the **Deploy to GitHub Pages** workflow from the Actions tab.
 5. Open the URL shown by the deployment and verify search, sorting, pagination, and posters in Chrome.
 
-`.env` is ignored by Git. Because this is a browser app, the key is still included in the built JavaScript and visible to website visitors. A GitHub secret keeps it out of source control; it does not make a browser key private.
+The TMDB key in `src/config.js` is intentionally public for this homework. It is visible in both the repository and built JavaScript. The optional local `.env` remains ignored by Git and is no longer used by the app.
 
 ## Submission
 

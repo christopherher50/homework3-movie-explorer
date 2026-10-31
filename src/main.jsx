@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { fetchMovies, sortMovies } from './movies.js';
 import './styles.css';
 
-const apiKey = import.meta.env.VITE_TMDB_API_KEY?.trim();
+import { apiKey } from './config.js';
 
 function MovieCard({ movie }) {
   const [imageFailed, setImageFailed] = useState(false);
@@ -105,7 +105,7 @@ function App() {
         {!apiKey ? (
           <div className="message" role="status">
             <h2>Add your TMDB API key</h2>
-            <p>Set VITE_TMDB_API_KEY in the .env file, then restart the app.</p>
+            <p>Add your TMDB API key in src/config.js.</p>
           </div>
         ) : error ? (
           <div className="message" role="alert">
